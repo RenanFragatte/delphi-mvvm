@@ -1,0 +1,41 @@
+object ClienteManutencaoView: TClienteManutencaoView
+  Left = 0
+  Top = 0
+  Caption = 'ClienteManutencaoView'
+  ClientHeight = 171
+  ClientWidth = 532
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBEdit1: TDBEdit
+    Left = 24
+    Top = 24
+    Width = 489
+    Height = 41
+    DataField = 'FIRST_NAME'
+    DataSource = ClienteManutencaoViewModel.DataSource
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 224
+    Top = 130
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+end

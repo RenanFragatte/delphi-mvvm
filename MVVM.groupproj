@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{681C43E7-5E3C-48B8-A0E2-EDFBDB367D1C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ClientesVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\MVVMTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ClientesVCL">
+        <MSBuild Projects="ClientesVCL.dproj"/>
+    </Target>
+    <Target Name="ClientesVCL:Clean">
+        <MSBuild Projects="ClientesVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClientesVCL:Make">
+        <MSBuild Projects="ClientesVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MVVMTests">
+        <MSBuild Projects="Test\MVVMTests.dproj"/>
+    </Target>
+    <Target Name="MVVMTests:Clean">
+        <MSBuild Projects="Test\MVVMTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MVVMTests:Make">
+        <MSBuild Projects="Test\MVVMTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ClientesVCL;MVVMTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ClientesVCL:Clean;MVVMTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ClientesVCL:Make;MVVMTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
