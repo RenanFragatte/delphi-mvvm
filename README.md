@@ -1,4 +1,4 @@
-delphi-mvvm
+Work in progress
 ===========
 
-Delphi MVVM Framework with DataSets
+Delphi MVVM Framework with DataSet support.
